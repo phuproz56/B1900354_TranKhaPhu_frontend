@@ -2,6 +2,8 @@ import {
     createWebHistory,
     createRouter
 } from "vue-router";
+
+
 import ContactBook from "@/views/ContactBook.vue";
 const routes = [{
         path: "/",
@@ -14,13 +16,33 @@ const routes = [{
         name: "notfound",
         component: () => import("@/views/NotFound.vue"),
     },
-    
+
     {
         path: "/contacts/:id",
         name: "contact.edit",
         component: () => import("@/views/ContactEdit.vue"),
         props: true // Truyền các biến trong $route.params vào làm props
     },
+
+    {
+        path: "/contacts/add",
+        name: "contact.add",
+        component: () => import("@/views/ContactAdd.vue"),
+        props: true 
+    },
+
+    {
+        path: "/login",
+        name: "Login",
+        component: () => import("@/views/login.vue"),
+    },
+
+    {
+        path: "/register",
+        name: "Register",
+        component: () => import("@/views/register.vue"),
+    }
+
 ];
 const router = createRouter({
     history: createWebHistory(

@@ -3,6 +3,11 @@
         <div class="col-md-10">
             <InputSearch v-model="searchText" />
         </div>
+        <div class="ml-2 row justify-content-around align-items-center">
+            <button class="btn btn-sm btn-danger" @click= "goToLogin"> Login</button>
+            <button class="ml-2 btn btn-sm btn-danger" @click= "goToRegister"> Register</button>
+        </div>
+        
         <div class="mt-3 col-md-6">
             <h4>
                 Danh bạ
@@ -31,6 +36,7 @@
                     <i class="fas fa-trash"></i> Xóa tất cả
                 </button>
             </div>
+
         </div>
         <div class="mt-3 col-md-6">
             <div v-if="activeContact">
@@ -128,6 +134,12 @@ export default {
         goToAddContact() {
             this.$router.push({ name: "contact.add" });
         },
+        goToLogin(){
+            this.$router.push({name:"Login"});
+        },
+        goToRegister(){
+            this.$router.push({name: "Register"});
+        }
     },
     mounted() {
         this.refreshList();
